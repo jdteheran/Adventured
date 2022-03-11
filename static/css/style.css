@@ -1,0 +1,277 @@
+body {
+    color: white;
+
+    /*background-image: url("../_images/img_background_01.png");*/
+    background-image: url("/static/images/img_background_01.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-attachment: fixed;
+    font-size: medium;
+}
+
+
+
+
+.main-menu .dropdown-menu,
+.app-panel {
+    background-color: rgba(26, 26, 26, 0.5);
+
+    -moz-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.5);
+
+    border-radius: 20px;
+
+}
+
+
+.app-store-item-active .price {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.menu-ps {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 10px;
+
+}
+
+/*MAIN MENU*/
+.main-menu .main-menu-pages {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+
+}
+
+
+
+.main-menu .navbar-nav .nav-link,
+.main-menu .dropdown-item,
+.main-menu a,
+a {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+}
+
+/* change the color of active or hovered links */
+
+.main-menu .nav-item.active .nav-link,
+.main-menu .nav-item:hover .nav-link,
+.main-menu a:hover,
+.main-menu .navbar-brand,
+.main-menu .navbar-text,
+a:hover {
+    color: white;
+}
+
+/*FIN - MAIN MENU*/
+
+
+
+/*GALERIA IMAGENES*/
+.carousel-indicators li {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    height: 5px;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5);
+
+}
+
+
+.carousel-indicators .active {
+    border-color: transparent !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.carousel-inner {
+    border-radius: 10px !important;
+    height: 100%;
+}
+
+.carousel-inner div {
+    height: 100%;
+    width: 100%;
+
+    background-image: url("/static/images/spr_icons_add.png");
+
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+/*FIN - GALERIA IMAGENES*/
+
+
+
+
+
+
+/*FICHA PRODUCTO*/
+.img-croped,.img-profile{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+    background-image: url("/static/images/spr_icons_add.png");
+
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+}
+.img-profile{
+    border: 1px solid rgba(256, 256, 256,.75);
+    border-radius: 100%;
+}
+
+.img-croped .edit {
+    background-color: rgba(26, 26, 26, 0.75);
+
+}
+
+.img-croped .edit:first-of-type {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.img-croped .edit:last-of-type {
+    border-radius: 0px 0px 10px 10px;
+}
+
+/*FIN - FICHA PRODUCTO*/
+
+
+/*.col-same-heith{
+    display: flex;
+    flex-wrap: wrap;
+}*/
+
+.ps-text-info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 15% 70% 15%;
+
+    /*font-size: 2.5vmin;*/
+    /*el minimo entre la haltura o anchura del viewport*/
+    font-size-adjust: none;
+    line-height: 1;
+
+
+
+}
+
+
+
+
+
+
+/*GALERIA PRODUCTOS*/
+
+.ps-gallery-categories {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.ps-gallery-categories p {
+
+    color: rgba(255, 255, 255, 0.5);
+    writing-mode: vertical-lr;
+    /*font-size: 2.5vmin;*/
+}
+
+
+.ps-gallery-categories a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ps-gallery {
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 60% 25% 15%;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+
+    /*font-size: 2.5vmin;*/
+    /*el minimo entre la haltura o anchura del viewport*/
+    font-size-adjust: none;
+    line-height: 1;
+}
+
+
+.ps-gallery:hover,
+.ps-gallery-selected {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: white;
+}
+
+.ps-gallery-add {
+    border-radius: 10px;
+    /* background-color: rgba(26, 26, 26, 0.5);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25%;*/
+
+    background-image: url("/static/images/spr_icons_add.png");
+
+
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+.ps-gallery div {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.ps-gallery div:nth-of-type(1) {
+
+    border-radius: 10px 10px 0 0;
+
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.ps-gallery div:nth-of-type(3) {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.foother_logo{
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
+}
+
+/*FIN - GALERIA PRODUCTOS*/

@@ -1,0 +1,72 @@
+/*1.3*/
+@media screen and (max-width: 576px) {  /*noone*/
+    .font-s-1 {font-size: 1.9vw;}
+    .font-s-2 {font-size: 2.47vw;}
+    .font-s-h1 {font-size: 4.5vw;}
+    .font-s-h5 {font-size: 3.5vw;}
+
+    .font-s-x {
+        font-size: 2.47vw; 
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 576px) {  /*sm*/
+    .font-s-1 {font-size: 1.8vw;}
+    .font-s-2 {font-size: 2.34vw;}
+    .font-s-h1 { font-size: 4vw;}
+    .font-s-h5 { font-size: 3vw;}
+
+    .font-s-x {
+        font-size: 2.34vw; 
+        background-color: saddlebrown;
+    }
+}
+
+@media screen and (min-width: 768px) { /*md*/
+    .font-s-1 {font-size: 1.5vw;}
+    .font-s-2 {font-size: 1.315vw;}
+    .font-s-h1 {font-size: 3.5vw;}
+    .font-s-h5 {font-size: 2.5vw; }
+
+    .font-s-x {
+        font-size: 1.315vw;
+        background-color:salmon;
+    }
+}
+
+@media screen and (min-width: 992px) { /*lg*/
+    .font-s-1 {font-size: 1.4vw;}
+    .font-s-2 {font-size: 18px;}
+    .font-s-h1 {font-size: 38px;}
+    .font-s-h5 {font-size: 26px;}
+
+    .font-s-x {
+        font-size: 1.82vw;
+        background-color: green;
+    }
+}
+
+@media screen and (min-width: 1200px) { /*xl*/
+    .font-s-1 {font-size: 1.4vw;}
+    .font-s-2 {font-size: 18px;}
+    .font-s-h1 {font-size: 38px;}
+    .font-s-h5 {font-size: 26px;}
+
+    .font-s-x {
+        font-size: 1.82vw;
+        background-color:saddlebrown;
+    }
+}
+
+@media screen and (min-width: 1400px) { /*xxl*/
+    .font-s-1 {font-size: 22px;}
+    .font-s-2 {font-size: 18px;}
+    .font-s-h1 {font-size: 38px;}
+    .font-s-h5 {font-size: 26px;}
+
+    .font-s-x {
+        font-size: 28px; 
+        background-color:purple;
+    }
+}

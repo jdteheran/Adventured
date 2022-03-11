@@ -1,0 +1,241 @@
+.app-form * {
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.estado {
+    color: rgba(255, 50, 50, 0.75);
+    text-align: center;
+}
+
+/*TEXT*/
+/*1.3*/
+@media screen and (max-width: 576px) {
+
+    /*noone*/
+    .app-form * {
+        font-size: 1.9vw;
+    }
+}
+
+@media screen and (min-width: 576px) {
+
+    /*sm*/
+    .app-form * {
+        font-size: 1.8vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /*md*/
+    .app-form * {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    /*lg*/
+    .app-form * {
+        font-size: 1.4vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    /*xl*/
+    .app-form * {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    /*xxl*/
+    .app-form * {
+        font-size: 18px;
+    }
+}
+
+/*END TEXT*/
+/*INPUT*/
+.app-form input,
+.app-form select,
+.app-form textarea {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    line-height: inherit;
+}
+
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+.app-form input::placeholder,
+.app-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Firefox */
+    opacity: 1;
+}
+
+/* Internet Explorer 10-11 */
+.app-form input:-ms-input-placeholder,
+.app-form textarea:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Microsoft Edge */
+.app-form input::-ms-input-placeholder,
+.app-form textarea::-ms-input-placeholder {
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.app-form input:focus,
+.app-form select:focus,
+.app-form textarea:focus {
+
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.app-form select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    outline: none;
+
+}
+
+.app-form option {
+    /*Supuestamente solo estos dos son attributos que se pueden modificar*/
+    color: white;
+    background-color: rgb(52, 58, 64);
+}
+
+
+.app-form textarea {
+    resize: none;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+}
+
+/* Chrome, Safari, Edge, Opera */
+.app-form input::-webkit-outer-spin-button,
+.app-form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.app-form input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/*FIN INPUT*/
+
+/*FILE*/
+.app-form .edit {
+    position: relative;
+}
+.app-form .file-hidden-icon, .file-hidden-icon {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    height: 100%;
+}
+
+.app-form .bi {
+    line-height: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-form .pointer{
+
+    cursor: pointer;
+}
+
+/*FIN FILE*/
+
+
+
+
+
+
+/* BUTTON*/
+.app-form button {
+    background-color: rgba(255, 255, 255, 0.25);
+
+}
+
+.app-form button:hover,
+.app-form button:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5);
+    cursor: pointer;
+}
+
+.app-form button:active {
+    background-color: rgba(255, 255, 255, 0.30) !important;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5) !important;
+}
+
+/*FIN BUTTON*/
+
+
+
+
+
+
+
+
+.app-form h1 {
+
+    font-size: xx-large;
+
+}
+
+.app-form h2 {
+
+    font-size: x-large;
+
+}
+
+.app-form p {
+
+    font-size: smaller;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.button-link,
+.button-link-selected {
+    border-radius: 10px;
+    padding: 10px 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.button-link-selected,
+.button-link:hover {
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}

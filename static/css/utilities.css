@@ -1,0 +1,99 @@
+/*Relacion de aspecto*/
+.ar-16-9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56%;
+    /* 16:9 Aspect Ratio */
+}
+
+.ar-16-10 {
+    position: relative;
+    width: 100%;
+    padding-top: 63%;
+    /* 16:10 Aspect Ratio */
+}
+
+.ar-1-1 {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+}
+
+.ar-16-9 .ar-c,
+.ar-1-1 .ar-c,
+.ar-16-10 .ar-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*FIN Relacion de aspecto*/
+
+
+
+
+@keyframes animation-rotatiom-kf {
+    0% {
+        opacity: 1;
+        transform: rotateX(90deg);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: rotateX(0deg);
+    }
+
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateX(90deg);
+    }
+}
+
+
+
+
+
+/*ANIMATIONS*/
+
+.anim-fade-out {
+    display: none;
+
+    /*animation-name: animation-fade-out-kf;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-fill-mode: both;*/
+
+
+}
+
+/*@keyframes animation-fade-out-kf{
+    0% {opacity: 1;max-height:100%; max-width:100%;}
+    100% {opacity: 0;visibility:hidden; max-height:0; max-width:0;}
+}*/
+
+
+.anim-fade-in {
+    display: block;
+
+    animation-name: animation-fade-in-kf;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+
+}
+
+@keyframes animation-fade-in-kf {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
