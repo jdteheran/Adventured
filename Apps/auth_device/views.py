@@ -3,6 +3,7 @@ from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.core import serializers
 from django.forms.models import model_to_dict
+from Apps.app.models import App
 
 # Create your views here.
 
@@ -22,22 +23,52 @@ def Temporal_token(request):
     }
 
     try:
-        data = json.loads(request.body)
 
-        device_id = data['device_id']
-        os = data['os']
-        os_version = data['os_version']
+        #un algoritmo desencriptar(request.POST.get('form'))
+
+        data = json.loads(request.POST.get('form'))
+
+        device = data['device']
+        app = data['app']
+
+        if not device:
+            status['message'] = 'device no enviado'
+            return JsonResponse(status)
+
+        if not app:
+            status['message'] = 'app no enviada'
+            return JsonResponse(status)
+
+        name = app['name']
+        version = app['version']
+        lenguaje = app['lenguaje']
+
+        if not name:
+            status['message'] = 'app name no enviada'
+            return JsonResponse(status)
+
+        if not version:
+            status['message'] = 'app verision no enviado'
+            return JsonResponse(status)
+
+        if not lenguaje:
+            status['message'] = 'app lenfuaje no enviado'
+            return JsonResponse(status)
+
+        device_id = device['device_id']
+        os = device['os']
+        os_version = device['os_version']
 
         if not device_id:
-            status['message'] = 'device_id no enviado'
+            status['message'] = 'device device_id no enviado'
             return JsonResponse(status)
 
         if not os:
-            status['message'] = 'os no enviado'
+            status['message'] = 'device os no enviado'
             return JsonResponse(status)
 
         if not os_version:
-            status['message'] = 'os_version no enviado'
+            status['message'] = 'device os_version no enviado'
             return JsonResponse(status)
 
         status['success'] = True
@@ -52,6 +83,10 @@ def Temporal_token(request):
             device = Device(device_id=device_id, os=os, os_version=os_version,token=token_generated)
 
             device.save()
+
+            app = App(token=token_generated, name=name, version=version, lenguaje=lenguaje)
+
+            app.save()
 
             status['message'] = 'dispotivo creado'
             

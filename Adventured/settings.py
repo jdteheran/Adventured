@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'rest_framework_simplejwt',
     'corsheaders',
+    'Apps.app',
 ]
 
 SITE_ID = 1

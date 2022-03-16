@@ -19,47 +19,48 @@ def Device_Login_Token(request):
     }
 
     if request.method == 'POST':
-
         try:
-            data = json.loads(request.body)
+            data = json.loads(request.POST.get('form'))
 
-            token = data['token']
+            temporal_token = data['temporal_token']
+            try:
+                token = data['token']
+            except:
+                print('errro')
 
-            if not token:
-                status['message'] = 'token no enviado'
+            if not temporal_token:
+                status['message'] = 'temporal token no enviado'
                 respuesta = {
                     'status': status,
-                    'token': token,
+                    'token': '',
                     'action': {
                         'message': '',
                         'reset': False,
-                        'bloqueo': False
+                        'block': False
                     }
                 }
                 return JsonResponse(respuesta)
 
             try:
-                device = Device.objects.get(token=token)
+                device = Device.objects.get(token=temporal_token)
 
                 try:
-                    device_bd = DeviceLogin.objects.get(device_token=token)
-                    device_bd.is_login = True
-                    device_bd.save()
+                    device_bd = DeviceLogin.objects.get(device_temporal_token=temporal_token)
 
                     status['success'] = True
                     status['message'] = 'login exitoso'
                     respuesta = {
                         'status': status,
-                        'token': token,
+                        'token': device_bd.device_token,
                         'action': {
                             'message': '',
                             'reset': False,
-                            'bloqueo': False
+                            'block': False
                         }
                     }
                     return JsonResponse(respuesta) 
                 except:
-                    deviceLogin = DeviceLogin(device_token=device.token, is_login=True)
+                    deviceLogin = DeviceLogin(device_temporal_token=device.token, device_token=token,  is_login=True)
                     deviceLogin.save()
 
                     status['success'] = True
@@ -70,7 +71,7 @@ def Device_Login_Token(request):
                         'action': {
                             'message': '',
                             'reset': False,
-                            'bloqueo': False
+                            'block': False
                         }
                     }
                     return JsonResponse(respuesta)   
@@ -82,7 +83,7 @@ def Device_Login_Token(request):
                     'action': {
                         'message': '',
                         'reset': False,
-                        'bloqueo': False
+                        'block': False
                     }
                 }
                 return JsonResponse(respuesta)    
@@ -94,7 +95,7 @@ def Device_Login_Token(request):
                 'action': {
                     'message': '',
                     'reset': False,
-                    'bloqueo': False
+                    'block': False
                 }
             }
             return JsonResponse(respuesta)
@@ -107,7 +108,7 @@ def Device_Login_Token(request):
             'action': {
                 'message': '',
                 'reset': False,
-                'bloqueo': False
+                'block': False
             }
         }
         return JsonResponse(respuesta)

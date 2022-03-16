@@ -33,12 +33,32 @@ function validacion_login() {
     fetch("/api/token/", peticion_opciones)
       .then( respuesta => respuesta.json())
       .then( json_resultado => {
+        console.log(json_resultado.access);
         if (json_resultado.access) {
-          console.log('consuminos endpoitn');
+          let formdata = new FormData();
+
+          temporal_token = {
+            'temporal_token': temporal_token,
+            'token': json_resultado.access
+          }
+          
+          formdata.append("form", JSON.stringify(temporal_token));
+
+          var requestOptions = {
+            method: 'POST',
+            body: formdata,
+            redirect: 'follow'
+          };
+
+          fetch("/device_login/", requestOptions)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+          
         }
       })
       .catch( error => console.log("error", error));
   }
 
-  return true;
+  return false;
 }
