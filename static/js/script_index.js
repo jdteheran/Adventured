@@ -60,5 +60,5 @@ function validacion_login() {
       .catch( error => console.log("error", error));
   }
 
-  return true;
+  return false;
 }
