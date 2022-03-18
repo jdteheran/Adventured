@@ -33,27 +33,37 @@ def Temporal_token(request):
 
         if not device:
             status['message'] = 'device no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         if not app:
             status['message'] = 'app no enviada'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         name = app['name']
         version = app['version']
-        lenguaje = app['lenguaje']
+        languaje = app['languaje']
 
         if not name:
             status['message'] = 'app name no enviada'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         if not version:
             status['message'] = 'app verision no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
-        if not lenguaje:
+        if not languaje:
             status['message'] = 'app lenfuaje no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         device_id = device['device_id']
         os = device['os']
@@ -61,15 +71,21 @@ def Temporal_token(request):
 
         if not device_id:
             status['message'] = 'device device_id no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         if not os:
             status['message'] = 'device os no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         if not os_version:
             status['message'] = 'device os_version no enviado'
-            return JsonResponse(status)
+            return JsonResponse({
+            'status':status
+            })
 
         status['success'] = True
 
@@ -84,7 +100,7 @@ def Temporal_token(request):
 
             device.save()
 
-            app = App(token=token_generated, name=name, version=version, lenguaje=lenguaje)
+            app = App(token=token_generated, name=name, version=version, languaje=languaje)
 
             app.save()
 
@@ -99,4 +115,6 @@ def Temporal_token(request):
         return JsonResponse(respuesta)
     except:
         status['message'] = 'error en el json de entrada'
-        return JsonResponse(status)
+        return JsonResponse({
+            'status':status
+            })
