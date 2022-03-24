@@ -122,17 +122,29 @@ def is_Login_Device(request):
         'codigo': 0
     }
 
+    user = {
+        'email': 'jdteheran@uninorte.edu.co',
+        'name': 'Juan Teheran',
+        'bridthday': '',
+        'region': 'Colombia',
+    }
+
     if request.method == 'POST':
 
+        status['success'] = True
+        status['message'] = 'Usuario Logueado'
 
+        respuesta = {
+            'status': status,
+            'user': user,
+            'api_url': '/api'
+        }
 
-
-        
-        return JsonResponse(status)
+        return JsonResponse(respuesta)
     else:
         respuesta = {
             'status': status,
-            'user': '',
+            'user': user,
             'api_url': ''
         }
         return JsonResponse(respuesta)
