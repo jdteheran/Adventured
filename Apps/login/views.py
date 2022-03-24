@@ -15,7 +15,7 @@ def Device_Login_Token(request):
     status = {
         'success': False,
         'message': '',
-        'codigo': 0
+        'code': 0
     }
 
     if request.method == 'POST':

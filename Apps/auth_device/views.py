@@ -19,7 +19,7 @@ def Temporal_token(request):
     status = {
         'success': False,
         'message': '',
-        'codigo': 0
+        'code': 0
     }
 
     try:
