@@ -26,7 +26,7 @@ def Device_Login_Token(request):
             try:
                 token = data['token']
             except:
-                print('errro')
+                print('error')
 
             if not temporal_token:
                 status['message'] = 'temporal token no enviado'
@@ -119,7 +119,7 @@ def is_Login_Device(request):
     status = {
         'success': False,
         'message': '',
-        'codigo': 0
+        'code': 0
     }
 
     user = {
