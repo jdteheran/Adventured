@@ -123,20 +123,27 @@ def is_Login_Device(request):
     status = {
         'success': False,
         'message': '',
-        'code': 0
+        'code': 200
     }
 
     user = {
-        'email': 'jdteheran@uninorte.edu.co',
-        'name': 'Juan Teheran',
+        'email': '',
+        'name': '',
         'bridthday': '',
-        'region': 'Colombia',
+        'region': '',
     }
 
     if request.method == 'POST':
 
         status['success'] = True
         status['message'] = 'Usuario Logueado'
+
+        user = {
+            'email': 'jdteheran@uninorte.edu.co',
+            'name': 'Juan Teheran',
+            'bridthday': '',
+            'region': 'Colombia',
+        }
 
         respuesta = {
             'status': status,
@@ -146,6 +153,8 @@ def is_Login_Device(request):
 
         return JsonResponse(respuesta)
     else:
+        status['message'] = 'Metodo no permitido'
+        status['code'] = '500'
         respuesta = {
             'status': status,
             'user': user,
