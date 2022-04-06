@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import path, include
 from Apps.login.views import Device_Login_Token, is_Login_Device
 from Apps.google_login.views import Bienvenido
+from Apps.email_ad.views import enviar_correo
 #from allauth.account.views import LoginView, SignupView 
 from django.contrib.auth.views import LoginView
 from rest_framework_simplejwt.views import (
@@ -20,6 +21,7 @@ urlpatterns = [
     path('users/', Temporal_token),
     path('device_login/', Device_Login_Token),
     path('fast_login/', is_Login_Device),
+    path('enviar_correo/', enviar_correo),
     #path('', LoginView.as_view(), name="custom_login" ),
 
     path('', 
