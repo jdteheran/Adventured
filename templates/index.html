@@ -16,27 +16,56 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/utilities.css' %}" />
+
+    <style>
+      
+        section {
+            border-radius: 20px;
+            margin-top: 60px;
+            background: #dddcdc;
+            color: #333;
+        }
+
+        form {
+            width: 80%;
+        }
+
+        input {
+            margin-top: 5px;
+        }
+
+        #btn {
+            margin-bottom: 40px;
+        }
+
+    </style>
+
 </head>
-<body>
+<body class="text-center">
 
-    <div class=" text-center">
-        <div class="form-group">
-            <h1 id="u_acount_type_text" class="font-weight-light">Iniciar Sesión</h1>
+    <section class="w-50 mx-auto " style="border: 2px solid #333;">
+
+        <div class="row justify-content-center p-5">
+            <div class="col-4 m-2">
+                <img class="foother_logo" style="width: 400px;" src="{% static 'images/img_logo_02.png' %}">
+            </div>
         </div>
-    </div>
 
-    <form action='/accounts/google/login/?process=login' method="post" >
-        {% csrf_token %}
-      <button type="submit">GOOGLE</button>
-    </form>
+        <form class="form-group mx-auto " action='/accounts/google/login/?process=login' method="post" >
+            {% csrf_token %}
+          <button class="form-control rounded-pill p-1" type="submit">Continue With Google</button>
+        </form>
+    
+        <form class="form-group mx-auto p-2" method="post" onsubmit='return validacion_login()'>
+            {% csrf_token %}
+            <input class="form-control rounded-pill p-1" type="text" name="username" id="user">
+            <input class="form-control rounded-pill p-1" type="password" name="password" id="pwd">
+            <input class="form-control btn p-1" type="submit" value="Login" id="btn">
+        </form>
+    
+    </section>
 
-    <form method="post" onsubmit='return validacion_login()'>
-        {% csrf_token %}
-        <input type="text" name="username" id="user">
-        <input type="password" name="password" id="pwd">
-        <input type="submit" value="Ingresar" id="btn">
-    </form>
-
+    
     <script src="{% static 'js/script_index.js' %}"></script>
 </body>
 </html>

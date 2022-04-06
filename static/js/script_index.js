@@ -3,6 +3,7 @@ const url = new URL(url_string);
 temporal_token = url.searchParams.get("temporal_token");
 
 function validacion_login() {
+  console.log('holaaa');
   if (temporal_token) {
     nombre_usuario = document.getElementById("user").value;
     password = document.getElementById("pwd").value;
@@ -60,5 +61,5 @@ function validacion_login() {
       .catch( error => console.log("error", error));
   }
 
-  return false;
+  return true;
 }

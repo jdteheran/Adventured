@@ -15,7 +15,7 @@ def Device_Login_Token(request):
     status = {
         'success': False,
         'message': '',
-        'code': 0
+        'code': 200
     }
 
     if request.method == 'POST':
@@ -30,6 +30,7 @@ def Device_Login_Token(request):
 
             if not temporal_token:
                 status['message'] = 'temporal token no enviado'
+                status['code'] = 500
                 respuesta = {
                     'status': status,
                     'token': '',
@@ -77,6 +78,7 @@ def Device_Login_Token(request):
                     return JsonResponse(respuesta)   
             except:
                 status['message'] = 'token no asociado a ningun dispositivo'
+                status['code'] = 500
                 respuesta = {
                     'status': status,
                     'token': '',
@@ -89,6 +91,7 @@ def Device_Login_Token(request):
                 return JsonResponse(respuesta)    
         except:
             status['message'] = 'json invalido'
+            status['code'] = 500
             respuesta = {
                 'status': status,
                 'token': '',
@@ -102,6 +105,7 @@ def Device_Login_Token(request):
         
     else:
         status['message'] = 'no se admite metodo diferente de post'
+        status['code'] = 500
         respuesta = {
             'status': status,
             'token': '',

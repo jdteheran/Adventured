@@ -13,6 +13,9 @@ body {
 }
 
 
+section {
+    border: 2px solid black !important;
+}
 
 
 .main-menu .dropdown-menu,

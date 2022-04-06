@@ -19,7 +19,7 @@ def Temporal_token(request):
     status = {
         'success': False,
         'message': '',
-        'code': 0
+        'code': 200
     }
 
     try:
@@ -33,12 +33,14 @@ def Temporal_token(request):
 
         if not device:
             status['message'] = 'device no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
 
         if not app:
             status['message'] = 'app no enviada'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
@@ -49,18 +51,21 @@ def Temporal_token(request):
 
         if not name:
             status['message'] = 'app name no enviada'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
 
         if not version:
             status['message'] = 'app verision no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
 
         if not languaje:
             status['message'] = 'app lenfuaje no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
@@ -71,18 +76,21 @@ def Temporal_token(request):
 
         if not device_id:
             status['message'] = 'device device_id no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
 
         if not os:
             status['message'] = 'device os no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
 
         if not os_version:
             status['message'] = 'device os_version no enviado'
+            status['code'] = 500
             return JsonResponse({
             'status':status
             })
@@ -115,6 +123,7 @@ def Temporal_token(request):
         return JsonResponse(respuesta)
     except:
         status['message'] = 'error en el json de entrada'
+        status['code'] = 500
         return JsonResponse({
             'status':status
             })
