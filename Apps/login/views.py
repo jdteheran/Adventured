@@ -139,10 +139,10 @@ def is_Login_Device(request):
         status['message'] = 'Usuario Logueado'
 
         user = {
-            'email': 'jdteheran@uninorte.edu.co',
-            'name': 'Juan Teheran',
+            'email': 'oliver.sitan@eyeflytech.com',
+            'name': 'Oliver Sitan',
             'bridthday': '',
-            'region': 'Colombia',
+            'region': 'Guatemala',
         }
 
         respuesta = {
