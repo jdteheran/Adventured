@@ -51,17 +51,15 @@
             </div>
         </div>
 
-        <form class="form-group mx-auto " action='/accounts/google/login/?process=login' method="post" >
-            {% csrf_token %}
-          <button class="form-control rounded-pill p-1" type="submit">Continue With Google</button>
+        <h3 class="p-5">Se ha cambiado tu contraseña, si no has sido tu puedes cambiar tu contraseña en el siguiente enlace</h3>
+
+        <form class="form-group mx-auto "  method="post" >
+    
+            <button class="form-control rounded-pill p-1 m-2" type="submit">Cambiar mi Contraseña</button>
+         
         </form>
     
-        <form class="form-group mx-auto p-2" method="post" onsubmit=''return validacion_login()>
-            {% csrf_token %}
-            <input class="form-control rounded-pill p-1" type="text" name="username" id="user">
-            <input class="form-control rounded-pill p-1" type="password" name="password" id="pwd">
-            <input class="form-control btn p-1" type="submit" value="Login" id="btn">
-        </form>
+
     
     </section>
 
